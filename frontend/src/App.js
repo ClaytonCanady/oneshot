@@ -1,13 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/Header'
+import Footer from './components/Footer'
+import Home from './components/Home'
 const App = () => {
 	return (
 		<Router>
 			<Header/>
 			<main className='App'>
-				<h1>test</h1>
+				<Route path='/' component={Home} exact />
 			</main>
+			<Footer/>
 		</Router>
 	);
 };

@@ -1,5 +1,22 @@
 .header {
-  background-color: #143642;
-  color: blue;
+	background-color: #143642;
 }
-
+.resources li {
+	list-style: none;
+}
+main {
+	min-height: 80vh;
+}
+.footer {
+	background-color: rgb(41, 39, 39);
+	color: white;
+}
+li {
+	list-style: none;
+}
+.home ul {
+	background-color: #ffe5e5;
+	padding-left: 0px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
