@@ -5,7 +5,9 @@ import oneShots from '../oneShots';
 let username;
 const HomeScreen = () => {
 	// sort oneshots by their rating from high to low
-	oneShots.sort((a, b) => (a.rating + (a.numRating * .1) < b.rating + (b.numRating * .1) ? 1 : -1));
+	const sortedOneShots = oneShots.sort((a, b) =>
+		a.rating + a.numRating * 0.1 < b.rating + b.numRating * 0.1 ? 1 : -1
+	);
 	return (
 		<div className='home px-3'>
 			<h1 className='text-center pt-3'>
@@ -18,7 +20,7 @@ const HomeScreen = () => {
 					<ul>
 						<h3>Top Five One Shots</h3>
 						{/* take top 5 oneshots and display name as a link  */}
-						{oneShots.slice(0, 5).map((oneShot) => (
+						{sortedOneShots.slice(0, 5).map((oneShot) => (
 							<Link to={`/oneshot/${oneShot._id}`}>
 								<li key={oneShot._id}>{oneShot.name}</li>
 							</Link>
@@ -28,7 +30,7 @@ const HomeScreen = () => {
 				<Col className=' text-center'>
 					<ul>
 						<h3>Top Five Monsters</h3>
-						{oneShots.slice(0, 5).map((oneShot) => (
+						{sortedOneShots.slice(0, 5).map((oneShot) => (
 							<Link to={`/oneshot/${oneShot._id}`}>
 								<li>{oneShot.name}</li>
 							</Link>
@@ -40,7 +42,7 @@ const HomeScreen = () => {
 				<Col className=' text-center'>
 					<ul>
 						<h3>Top 5 Classes</h3>
-						{oneShots.slice(0, 5).map((oneShot) => (
+						{sortedOneShots.slice(0, 5).map((oneShot) => (
 							<Link to={`/oneshot/${oneShot._id}`}>
 								<li>{oneShot.name}</li>
 							</Link>
@@ -50,7 +52,7 @@ const HomeScreen = () => {
 				<Col className=' text-center'>
 					<ul>
 						<h3>Top 5 Campaign Settings</h3>
-						{oneShots.slice(0, 5).map((oneShot) => (
+						{sortedOneShots.slice(0, 5).map((oneShot) => (
 							<Link to={`/oneshot/${oneShot._id}`}>
 								<li>{oneShot.name}</li>
 							</Link>

@@ -31,6 +31,10 @@ const OneShotList = () => {
 									<Link to={`/oneShot/${oneShot._id}`}>
 										<Card.Title as='div'>
 											<strong>{oneShot.name}</strong>
+											<br />
+											<strong>
+												{oneShot.rating} / 5 with {oneShot.numRating} ratings
+											</strong>
 										</Card.Title>
 									</Link>
 									<Card.Text as='div'>
