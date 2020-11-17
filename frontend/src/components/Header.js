@@ -7,9 +7,7 @@ const Header = () => {
 			<Navbar expand='lg' variant='dark' collapseOnSelect>
 				<Container>
 					<LinkContainer to='/'>
-						<Navbar.Brand>
-							One Shot Ideas 
-						</Navbar.Brand>
+						<Navbar.Brand>One Shot Ideas</Navbar.Brand>
 					</LinkContainer>
 					<Navbar.Toggle aria-controls='basic-navbar-nav' />
 					<Navbar.Collapse id='basic-navbar-nav'>
@@ -25,7 +23,7 @@ const Header = () => {
 							</LinkContainer>
 
 							<LinkContainer to='/forum'>
-								<Nav.Link>Forum</Nav.Link>
+								<Nav.Link>Campaign Settings</Nav.Link>
 							</LinkContainer>
 							<LinkContainer to='/login'>
 								<Nav.Link>Login/Signup</Nav.Link>
