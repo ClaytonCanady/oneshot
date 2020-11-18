@@ -1,5 +1,5 @@
 import React from 'react';
-import oneShots from '../oneShots';
+import oneShots from '../data/oneShots';
 const OneShotScreen = (props) => {
 	const oneShot = oneShots.find((a) => {
 		return a._id === props.match.params.id;

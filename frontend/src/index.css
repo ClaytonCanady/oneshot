@@ -27,3 +27,7 @@ li {
 .color-black {
 	color: black;
 }
+.title {
+	font-size: 18px;
+	color: rgb(22, 21, 21);
+}

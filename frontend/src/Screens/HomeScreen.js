@@ -1,13 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Col, Row } from 'react-bootstrap';
-import oneShots from '../oneShots';
+import oneShots from '../data/oneShots';
+import monsters from '../data/monsters';
 let username;
 const HomeScreen = () => {
 	// sort oneshots by their rating from high to low
 	const sortedOneShots = oneShots.sort((a, b) =>
 		a.rating + a.numRating * 0.1 < b.rating + b.numRating * 0.1 ? 1 : -1
 	);
+		const sortedMonsters = monsters.sort((a, b) =>
+			a.rating + a.numRating * 0.1 < b.rating + b.numRating * 0.1 ? 1 : -1
+		);
 	return (
 		<div className='home px-3'>
 			<h1 className='text-center pt-3'>
@@ -30,9 +34,9 @@ const HomeScreen = () => {
 				<Col className=' text-center'>
 					<ul>
 						<h3>Top Five Monsters</h3>
-						{sortedOneShots.slice(0, 5).map((oneShot) => (
-							<Link to={`/oneshot/${oneShot._id}`}>
-								<li>{oneShot.name}</li>
+						{sortedMonsters.slice(0, 5).map((monster) => (
+							<Link to={`/monster/${monster._id}`}>
+								<li>{monster.name}</li>
 							</Link>
 						))}
 					</ul>

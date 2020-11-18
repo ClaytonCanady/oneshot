@@ -1,17 +1,17 @@
 import { Link } from 'react-router-dom';
 import { Row, Col, Card } from 'react-bootstrap';
-import oneShots from '../data/oneShots';
-import {  useState, useEffect } from 'react';
+import monsters from '../data/monsters'
+import { useState, useEffect } from 'react';
 import Pagination from '../components/Pagination';
 import Rating from '../components/Rating';
-const OneShotList = () => {
+const MonsterList = () => {
 	const [posts, setPosts] = useState([]);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [postsPerPage] = useState(12);
 
 	useEffect(() => {
 		const fetchPosts = async () => {
-			setPosts(oneShots);
+			setPosts(monsters);
 		};
 		fetchPosts();
 	}, []);
@@ -22,30 +22,30 @@ const OneShotList = () => {
 	const paginate = (pageNumber) => setCurrentPage(pageNumber);
 	return (
 		<div className='mx-3'>
-			<h1 className='text-center py-4'>One Shot Ideas</h1>
+			<h1 className='text-center py-4'>HomeBrew Monsters</h1>
 			<Row>
-				{currentPosts.map((oneShot) => (
-					<Col key={oneShot._id} sm={12} md={6} lg={4} xl={3}>
+				{currentPosts.map((monster) => (
+					<Col key={monster._id} sm={12} md={6} lg={4} xl={3}>
 						<Card className='my-3 p-3 rounded'>
-							<Link to={`/oneShot/${oneShot._id}`}>
+							<Link to={`/monster/${monster._id}`}>
 								<Card.Body className='color-black'>
-									<Link to={`/oneShot/${oneShot._id}`}>
+									<Link to={`/monster/${monster._id}`}>
 										<Card.Title as='div'>
-											<strong className='title'>{oneShot.name}</strong>
+											<strong className='title'>{monster.name}</strong>
 											<br />
 											<strong>
 												<Rating
-													value={oneShot.rating}
-													text={`${oneShot.numRating} reviews`}
+													value={monster.rating}
+													text={`${monster.numRating} reviews`}
 												/>
 											</strong>
 										</Card.Title>
 									</Link>
 									<Card.Text as='div'>
 										<p>
-											{oneShot.desc.length < 150
-												? oneShot.desc
-												: oneShot.desc.substring(0, 150) + '...'}
+											{monster.desc.length < 150
+												? monster.desc
+												: monster.desc.substring(0, 150) + '...'}
 										</p>
 									</Card.Text>
 								</Card.Body>
@@ -65,4 +65,4 @@ const OneShotList = () => {
 	);
 };
 
-export default OneShotList;
+export default MonsterList;

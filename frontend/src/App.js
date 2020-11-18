@@ -5,19 +5,18 @@ import Footer from './components/Footer'
 import HomeScreen from './Screens/HomeScreen'
 import OneShotScreen from './Screens/OneShotScreen'
 import OneShotList from './Screens/OneShotList'
-import oneShots from './oneShots';
+import MonsterList from './Screens/MonsterList'
+import MonsterScreen from './Screens/MonsterScreen'
 const App = () => {
 	return (
 		<Router>
 			<Header />
 			<main className='App'>
-				<Route path='/' component={HomeScreen} exact  />
-				<Route
-					path='/oneshot/:id'
-					component={OneShotScreen}
-					
-				/>
-				<Route path='/one-shots' component={OneShotList}  />
+				<Route path='/' component={HomeScreen} exact />
+				<Route path='/oneshot/:id' component={OneShotScreen} />
+				<Route path='/one-shots' component={OneShotList} />
+				<Route path='/monster/:id' component={MonsterScreen} />
+				<Route path='/monsters' component={MonsterList} />
 			</main>
 			<Footer />
 		</Router>
