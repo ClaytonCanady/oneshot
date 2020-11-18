@@ -1,19 +1,20 @@
 import { Link } from 'react-router-dom';
 import { Row, Col, Card } from 'react-bootstrap';
-import oneShots from '../oneShots';
-import { useEffect, useState } from 'react';
+
+import {  useState } from 'react';
 import Pagination from '../components/Pagination';
-const OneShotList = () => {
+import Rating from '../components/Rating';
+const OneShotList = ({ oneShots }) => {
 	const [posts, setPosts] = useState([]);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [postsPerPage] = useState(12);
-
-	useEffect(() => {
-		const fetchPosts = async () => {
-			setPosts(oneShots);
-		};
-		fetchPosts();
-	}, []);
+	setPosts(oneShots);
+	// useEffect(() => {
+	// 	const fetchPosts = async () => {
+	// 		setPosts(oneShots);
+	// 	};
+	// 	fetchPosts();
+	// }, [oneShots]);
 
 	const indexOfLastPost = currentPage * postsPerPage;
 	const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -33,7 +34,10 @@ const OneShotList = () => {
 											<strong>{oneShot.name}</strong>
 											<br />
 											<strong>
-												{oneShot.rating} / 5 with {oneShot.numRating} ratings
+												<Rating
+													value={oneShot.rating}
+													text={`${oneShot.numRating} reviews`}
+												/>
 											</strong>
 										</Card.Title>
 									</Link>

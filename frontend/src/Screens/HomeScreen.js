@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Col, Row } from 'react-bootstrap';
-import oneShots from '../oneShots';
+
 let username;
-const HomeScreen = () => {
+const HomeScreen = ({oneShots}) => {
 	// sort oneshots by their rating from high to low
 	const sortedOneShots = oneShots.sort((a, b) =>
 		a.rating + a.numRating * 0.1 < b.rating + b.numRating * 0.1 ? 1 : -1
