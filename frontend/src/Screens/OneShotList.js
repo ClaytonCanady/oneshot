@@ -1,20 +1,20 @@
 import { Link } from 'react-router-dom';
 import { Row, Col, Card } from 'react-bootstrap';
-
-import {  useState } from 'react';
+import oneShots from '../oneShots';
+import {  useState, useEffect } from 'react';
 import Pagination from '../components/Pagination';
 import Rating from '../components/Rating';
-const OneShotList = ({ oneShots }) => {
+const OneShotList = () => {
 	const [posts, setPosts] = useState([]);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [postsPerPage] = useState(12);
-	setPosts(oneShots);
-	// useEffect(() => {
-	// 	const fetchPosts = async () => {
-	// 		setPosts(oneShots);
-	// 	};
-	// 	fetchPosts();
-	// }, [oneShots]);
+
+	useEffect(() => {
+		const fetchPosts = async () => {
+			setPosts(oneShots);
+		};
+		fetchPosts();
+	}, []);
 
 	const indexOfLastPost = currentPage * postsPerPage;
 	const indexOfFirstPost = indexOfLastPost - postsPerPage;

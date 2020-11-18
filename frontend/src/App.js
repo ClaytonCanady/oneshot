@@ -11,13 +11,13 @@ const App = () => {
 		<Router>
 			<Header />
 			<main className='App'>
-				<Route path='/' component={HomeScreen} exact oneShots={oneShots} />
+				<Route path='/' component={HomeScreen} exact  />
 				<Route
 					path='/oneshot/:id'
 					component={OneShotScreen}
-					oneShots={oneShots}
+					
 				/>
-				<Route path='/one-shots' component={OneShotList} oneShots={oneShots} />
+				<Route path='/one-shots' component={OneShotList}  />
 			</main>
 			<Footer />
 		</Router>
