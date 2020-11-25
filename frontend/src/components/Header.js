@@ -22,7 +22,7 @@ const Header = () => {
 								<Nav.Link>Classes</Nav.Link>
 							</LinkContainer>
 
-							<LinkContainer to='/forum'>
+							<LinkContainer to='/campaigns'>
 								<Nav.Link>Campaign Settings</Nav.Link>
 							</LinkContainer>
 							<LinkContainer to='/login'>

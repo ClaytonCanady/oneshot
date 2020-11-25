@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Col, Row } from 'react-bootstrap';
 import oneShots from '../data/oneShots';
 import monsters from '../data/monsters';
+import classes from '../data/classes'
+import campaigns from '../data/campaigns'
 let username;
 const HomeScreen = () => {
 	// sort oneshots by their rating from high to low
@@ -12,6 +14,12 @@ const HomeScreen = () => {
 		const sortedMonsters = monsters.sort((a, b) =>
 			a.rating + a.numRating * 0.1 < b.rating + b.numRating * 0.1 ? 1 : -1
 		);
+			const sortedClasses = classes.sort((a, b) =>
+				a.rating + a.numRating * 0.1 < b.rating + b.numRating * 0.1 ? 1 : -1
+			);
+				const sortedCampaigns = campaigns.sort((a, b) =>
+					a.rating + a.numRating * 0.1 < b.rating + b.numRating * 0.1 ? 1 : -1
+				);
 	return (
 		<div className='home px-3'>
 			<h1 className='text-center pt-3'>
@@ -46,9 +54,9 @@ const HomeScreen = () => {
 				<Col className=' text-center'>
 					<ul>
 						<h3>Top 5 Classes</h3>
-						{sortedOneShots.slice(0, 5).map((oneShot) => (
-							<Link to={`/oneshot/${oneShot._id}`}>
-								<li>{oneShot.name}</li>
+						{sortedClasses.slice(0, 5).map((classIdea) => (
+							<Link to={`/classidea/${classIdea._id}`}>
+								<li>{classIdea.name}</li>
 							</Link>
 						))}
 					</ul>
@@ -56,9 +64,9 @@ const HomeScreen = () => {
 				<Col className=' text-center'>
 					<ul>
 						<h3>Top 5 Campaign Settings</h3>
-						{sortedOneShots.slice(0, 5).map((oneShot) => (
-							<Link to={`/oneshot/${oneShot._id}`}>
-								<li>{oneShot.name}</li>
+						{sortedCampaigns.slice(0, 5).map((campaign) => (
+							<Link to={`/campaigns/${campaign._id}`}>
+								<li>{campaign.name}</li>
 							</Link>
 						))}
 					</ul>

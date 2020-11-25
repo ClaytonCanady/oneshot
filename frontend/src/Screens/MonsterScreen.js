@@ -1,6 +1,6 @@
 import React from 'react';
 import monsters from '../data/monsters';
-const OneShotScreen = (props) => {
+const MonsterScreen = (props) => {
 	const monster = monsters.find((a) => {
 		return a._id === props.match.params.id;
 	});
@@ -12,4 +12,4 @@ const OneShotScreen = (props) => {
 	);
 };
 
-export default OneShotScreen;
+export default MonsterScreen;
