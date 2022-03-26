@@ -22,7 +22,7 @@ const CampaignList = () => {
 	const paginate = (pageNumber) => setCurrentPage(pageNumber);
 	return (
 		<div className='mx-3'>
-			<h1 className='text-center py-4'>Campaign Settingsgit add .</h1>
+			<h1 className='text-center py-4'>Campaign Settings</h1>
 			<Row>
 				{currentPosts.map((campaign) => (
 					<Col key={campaign._id} sm={12} md={6} lg={4} xl={3}>

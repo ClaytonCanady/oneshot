@@ -65,7 +65,7 @@ const HomeScreen = () => {
 					<ul>
 						<h3>Top 5 Campaign Settings</h3>
 						{sortedCampaigns.slice(0, 5).map((campaign) => (
-							<Link to={`/campaigns/${campaign._id}`}>
+							<Link to={`/campaign/${campaign._id}`}>
 								<li>{campaign.name}</li>
 							</Link>
 						))}
